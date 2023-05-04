@@ -94,11 +94,11 @@ const revalidarToken = async(req, res = response) => {
     // Generar nuevo token
     const token = await generarJWT(uid, name);
 
-
-
     res.json({
         ok: true,
         msg: 'renew',
+        uid, 
+        name,
         token,
     })
 }
