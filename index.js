@@ -28,9 +28,12 @@ app.use('/api/events', require('./routes/events'));
 //     res.sendFile( __dirname + '/public/index.html');
 // })
 
-app.get('*', (req, res) => {
-    res.redirect('https://www.google.com/');
-})
+app.get('/*', function(req,res) {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+// app.get('*', (req, res) => {
+//     res.redirect('https://www.google.com/');
+// })
 
 
 
