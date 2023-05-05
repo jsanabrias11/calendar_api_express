@@ -29,7 +29,7 @@ app.use('/api/events', require('./routes/events'));
 // })
 
 app.get('*', (req, res) => {
-    res.sendFile('https://calendarappfrontend-production.up.railway.app/');
+    res.redirect('https://calendarappfrontend-production.up.railway.app/');
 })
 
 
