@@ -7,6 +7,9 @@ const { dbConnection } = require('./database/config');
 // Crear el servidor de express
 const app = express();
 
+// Puerto
+const port = process.env.PORT || 4000;
+
 // Base de datos
 dbConnection();
 
@@ -39,6 +42,6 @@ app.use('/api/events', require('./routes/events'));
 
 
 // Escuchar peticiones
-app.listen(process.env.PORT , ()=>{
+app.listen(port , ()=>{
     console.log(`Servidor corriendo en puerto ${ process.env.PORT }`);
 })
